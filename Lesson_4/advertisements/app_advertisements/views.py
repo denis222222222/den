@@ -1,8 +1,9 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+
 
 def index(request):
-    return HttpResponse('Успешно')
-def home(request):
-    return HttpResponse('Домашка по 4 занятию')
-    
+    return render(request, 'index.html')
+
+
+def top_sellers(request):
+    return render(request, 'top-sellers.html')
