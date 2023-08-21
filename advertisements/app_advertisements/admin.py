@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Advertisements
+from .models import Advertisement
 
 class AdvertisementAdmin(admin.ModelAdmin):
     list_display = ['id', 'title', 'description', 'price', 'created_date', 'auction']
@@ -23,4 +23,4 @@ class AdvertisementAdmin(admin.ModelAdmin):
     def make_auction_as_true(self, request, queryset):
         queryset.update(auction=True)
 
-admin.site.register(Advertisements, AdvertisementAdmin)
+admin.site.register(Advertisement, AdvertisementAdmin)
