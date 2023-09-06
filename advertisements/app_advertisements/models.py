@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib import admin
 from django.utils.html import format_html
 from django.contrib.auth import get_user_model
+from django.urls import reverse
 
 User = get_user_model()
 
@@ -31,6 +32,10 @@ class Advertisement(models.Model):
         return self.created_at.strftime('%d:%m:%Y в %H:%M:%S')
     
 
+    def get_absolute_url(self):
+        return reverse('adv=detail', kwargs={"pk": self.pk})
+    
+    
 '''class Advertisement(models.Model): 
 
     def __str__(self): 
